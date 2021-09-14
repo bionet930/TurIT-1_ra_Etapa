@@ -1,0 +1,88 @@
+#:import utils kivy.utils
+
+<DatosUsuarioScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': 1, 'right': .6}
+            size_hint: 1, .1
+            padding: 10
+            spacing: 10
+
+            ImageButton:
+                source: 'icons/atras.jpg'
+                on_release:
+                    app.change_screen('usuario_screen')
+
+        Label:
+            text:'DATOS DE USUARIO'
+            pos_hint:{'top': 1, 'left': .3}
+            size_hint: 1, .1
+            color:(0, 0, 0, 1.0)
+
+        ImageButton:
+            source: 'img/cuenta.jpg'
+            pos_hint:{'x': .4, 'y': .7}
+            size_hint: 100, 300
+
+        GridLayout:
+            cols:1
+            rows:7
+            pos_hint:{'top': .90, 'left': 1}
+            size_hint: 1, .9
+            padding: 1
+            spacing: 1
+
+            ImageButton:
+                source: 'img/topinfo.jpg'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 50, 150
+
+            ImageButton:
+                source: 'img/historicopuntos.jpg'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 45, 120
+                on_release:
+                    print("Historico de puntos funcionando")
+
+            ImageButton:
+                source: 'img/datospersonales.jpg'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 45, 120
+                on_release:
+                    print("Datos personales funcionando")
+
+            ImageButton:
+                source: 'img/cambiarcontrasena.jpg'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 45, 120
+                on_release:
+                    print("Cambiar contrasena funcionando")
+
+            ImageButton:
+                source: 'img/cambiaremail.jpg'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 45, 120
+                on_release:
+                    print("Cambiar email funcionando")
+
+            ImageButton:
+                source: 'img/cambiarcelular.jpg'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 45, 120
+                on_release:
+                    print("Cambiar celular funcionando")
+
+            ImageButton:
+                source: 'img/preguntasfrecuentes.jpg'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 45, 120
+                on_release:
+                    print("Preguntas frecuentes funcionando")

@@ -1,0 +1,102 @@
+#:import utils kivy.utils
+
+<HomeScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': 1, 'left': 1}
+            size_hint: 1, .1
+
+            ImageButton:
+                source: 'icons/notificaciones.png'
+                on_release:
+                    app.change_screen('notificaciones_screen')
+            ImageButton:
+                source: 'icons/points.png'
+                on_release:
+                    print("Boton puntos funcionando")
+            ImageButton:
+                source: 'icons/usuario.png'
+                on_release:
+                    app.change_screen('usuario_screen')
+
+        GridLayout:
+            cols: 1
+            pos_hint:{'top': .9, 'left': 1}
+            size_hint: 1, .8
+            padding: 9
+            spacing: 8
+
+            ImageButton:
+                source: 'img/puertodesalto.jpg'
+                size_hint: self.texture_size
+                on_release:
+                    print("Boton Puerto funcionando")
+            Button:
+                size_hint: self.texture_size
+                text: 'Agregar Puerto de Salto para ganar puntos'
+                font_size: 14
+                color: (0, 0, 0, 1.0)
+                on_release:
+                    print('Agregar Puerto funcionando')
+                background_color: (0, 0, 0, 0)
+                size_hint: self.texture_size
+            ImageButton:
+                source: 'img/localesdescuentos.jpg'
+                size_hint: self.texture_size
+                on_release:
+                    app.change_screen("store_screen")
+            Button:
+                size_hint: self.texture_size
+                text: 'Locales donde canjear sus descuentos'
+                font_size: 14
+                color: (0, 0, 0, 1.0)
+                on_release:
+                    app.change_screen("store_screen")
+                background_color: (0, 0, 0, 0)
+                size_hint: self.texture_size
+            ImageButton:
+                source: 'img/lugaresrecomendados.png'
+                size_hint: self.texture_size
+                on_release:
+                    app.change_screen("ubicacion_screen")
+            Button:
+                size_hint: self.texture_size
+                text: 'Lugares recomendados a visitar en Salto'
+                font_size: 14
+                color: (0, 0, 0, 1.0)
+                on_release:
+                    app.change_screen("ubicacion_screen")
+                background_color: (0, 0, 0, 0)
+                size_hint: self.texture_size
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': .1, 'left': 1}
+            size_hint: 1, .1
+
+            ImageButton:
+                source: 'icons/homeb.png'
+                on_release:
+                    app.change_screen('home_screen')
+            ImageButton:
+                source: 'icons/ticketsw.png'
+                on_release: app.change_screen ('descuentos')
+            ImageButton:
+                source: 'icons/agregar.png'
+                on_release:
+                    app.change_screen("agregar_screen")
+            ImageButton:
+                source: 'icons/ubicacionw.png'
+                on_release:
+                    app.change_screen("ubicacion_screen")
+            ImageButton:
+                source: 'icons/tiendaw.png'
+                on_release:
+                    app.change_screen("store_screen")

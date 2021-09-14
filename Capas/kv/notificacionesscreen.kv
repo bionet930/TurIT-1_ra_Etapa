@@ -1,0 +1,95 @@
+<NotificacionesScreen>:
+
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text:'NOTIFICACIONES'
+            pos_hint:{'top': 1, 'left': 1}
+            size_hint: 1, .2
+            color:(0, 0, 0, 1.0)
+
+        GridLayout:
+            cols: 2
+            rows: 6
+            pos_hint:{'top': .8, 'left': 1}
+            size_hint: .9, .7
+
+            ImageButton:
+                source: 'icons/100puntos.png'
+                on_release:
+                    print("Boton puntos funcionando")
+
+            Label:
+                text:"FELICITACIONES! HA GANADO 100 PUNTOS"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: (0, 0, 0, 1.0)
+
+            ImageButton:
+                source: 'icons/100puntos.png'
+                on_release:
+                    print("Boton puntos funcionando")
+
+            Label:
+                text:"FELICITACIONES! HA GANADO 100 PUNTOS"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: (0, 0, 0, 1.0)
+
+            ImageButton:
+                source: 'icons/ticketsw.png'
+                on_release:
+                    print("Boton puntos funcionando")
+
+            Label:
+                text:"HA CANJEADO SU TICKET EN TIENDA GUAPAS"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: (0, 0, 0, 1.0)
+
+            ImageButton:
+                source: 'icons/ubicacionw.png'
+                on_release:
+                    print("Boton puntos funcionando")
+
+            Label:
+                text:"HA CARGADO UN NUEVO PUNTO DE INTERES EN EL MAPA, GRACIAS"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: (0, 0, 0, 1.0)
+
+            ImageButton:
+                source: 'icons/tiendaw.png'
+                on_release:
+                    print("Boton puntos funcionando")
+
+            Label:
+                text:"HEMOS AGREGADO UN NUEVO LOCAL EN LA SECCION TIENDAS"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: (0, 0, 0, 1.0)
+
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': .1, 'left': 1}
+            size_hint: 1, .1
+
+            Button:
+                text: 'Volver'
+                font_size: 12
+                color: (0, 0, 0, 1.0)
+                background_color: (0, 0, 0, 0)
+                size_hint: .5, .3
+                on_release:
+                    app.change_screen('home_screen')

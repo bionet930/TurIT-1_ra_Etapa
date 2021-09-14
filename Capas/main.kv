@@ -1,0 +1,49 @@
+#:include kv/inicioscreen.kv
+#:include kv/homescreen.kv
+#:include kv/agregarscreen.kv
+#:include kv/camerascreen.kv
+#:include kv/storescreen.kv
+#:include kv/ubicacionscreen.kv
+#:include kv/notificacionesscreen.kv
+#:include kv/usuarioscreen.kv
+#:include kv/descuentos.kv
+#:include kv/listadescuentos.kv
+#:include kv/datosusuarioscreen.kv
+
+GridLayout:
+    cols:1
+    ScreenManager:
+        id: screen_manager
+        InicioScreen:
+            name: 'inicio_screen'
+            id: inicio_screen
+        HomeScreen:
+            name: 'home_screen'
+            id: home_screen
+        AgregarScreen:
+            name: 'agregar_screen'
+            id: agregar_screen
+        CameraScreen:
+            name: 'camera_screen'
+            id: camera_screen
+        UbicacionScreen:
+            name: 'ubicacion_screen'
+            id: ubicacion_screen
+        StoreScreen:
+            name: 'store_screen'
+            id: store_screen
+        NotificacionesScreen:
+            name: 'notificaciones_screen'
+            id: notificaciones_screen
+        UsuarioScreen:
+            name: 'usuario_screen'
+            id: usuario_screen
+        DescuentosScreen:
+            name: 'descuentos'
+            id: descuentos
+        ListaDescuentosScreen:
+            name: 'listadescuentos'
+            id: listadescuentos
+        DatosUsuarioScreen:
+            name: 'datosusuario_screen'
+            id: datosusuario_screen

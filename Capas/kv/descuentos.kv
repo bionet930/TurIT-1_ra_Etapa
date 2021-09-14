@@ -1,0 +1,58 @@
+#:import utils kivy.utils
+#:import BoxLayout kivy.uix.boxlayout
+
+<DescuentosScreen>:
+
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text:'DESCUENTOS'
+            pos_hint:{'top': 1, 'left': 1}
+            size_hint: 1, .2
+            color:(0, 0, 0, 1.0)
+
+        GridLayout:
+            rows:4
+            cols: 1
+            size: self.size
+            pos: self.pos
+            padding: 5
+            spacing: 30
+
+            ImageButton:
+                source: 'img/descuentos.jpg'
+                size_hint_y: 0.7
+            Button:
+                size_hint_y: 0.05
+                text: 'Ver Descuentos'
+                font_size: 15
+                on_press:
+                    root.create_database()
+
+                    app.change_screen('listadescuentos')
+    GridLayout:
+        rows: 1
+        pos_hint:{'top': .1, 'left': 1}
+        size_hint: 1, .1
+
+        ImageButton:
+            source: 'icons/homew.png'
+            on_release:
+                app.change_screen('home_screen')
+        ImageButton:
+            source: 'icons/ticketsb.png'
+            on_release: app.change_screen ('descuentos')
+        ImageButton:
+            source: 'icons/ubicacionw.png'
+            on_release:
+                app.change_screen("ubicacion_screen")
+        ImageButton:
+            source: 'icons/tiendaw.png'
+            on_release:
+                app.change_screen("store_screen")

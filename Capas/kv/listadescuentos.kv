@@ -1,0 +1,92 @@
+#:import QRCodeWidget kivy_garden.qrcode
+
+<ListaDescuentosScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': 1, 'right': .6}
+            size_hint: 1, .1
+            padding: 10
+            spacing: 10
+
+            ImageButton:
+                source: 'icons/atras.jpg'
+                on_release:
+                    app.change_screen('descuentos')
+
+        Label:
+            text:'LISTA DE DESCUENTOS'
+            pos_hint:{'top': 1, 'left': .3}
+            size_hint: 1, .2
+            color:(0, 0, 0, 1.0)
+
+        GridLayout:
+            rows: 3
+            cols: 2
+            size: self.size
+            pos_hint:{'top': .8, 'left': 1}
+            padding: 15
+            spacing: 15
+
+            Button:
+                size_hint_y: None
+                pos_hint:{'center_x':0.5, 'y': 0.20}
+                text: '2X1 Tragos 120 puntos'
+                font_size: 12
+            Button:
+                size_hint_y: None
+                pos_hint:{'center_x':0.5, 'y': 0.20}
+                text: 'Canje Tragos'
+                font_size: 15
+                on_press: root.qr_canje()
+            Button:
+                size_hint_y: None
+                pos_hint:{'center_x':0.5, 'y': 0.20}
+                text: 'Desc.Cena 250 puntos'
+                font_size: 12
+            Button:
+                size_hint_y: None
+                pos_hint:{'center_x':0.5, 'y': 0.20}
+                text: 'Canje Cena'
+                font_size: 15
+                on_press: root.qr_canje()
+            Button:
+                size_hint_y: None
+                pos_hint:{'center_x':0.5, 'y': 0.20}
+                text: 'Tour Guiado 230 puntos'
+                font_size: 12
+            Button:
+                size_hint_y: None
+                pos_hint:{'center_x':0.5, 'y': 0.20}
+                text: 'Canje Tour'
+                font_size: 15
+                on_press: root.qr_canje()
+
+
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': .1, 'left': 1}
+            size_hint: 1, .1
+
+            ImageButton:
+                source: 'icons/homew.png'
+                on_release:
+                    app.change_screen('home_screen')
+            ImageButton:
+                source: 'icons/ticketsb.png'
+                on_release: app.change_screen ('descuentos')
+            ImageButton:
+                source: 'icons/ubicacionw.png'
+                on_release:
+                    app.change_screen("ubicacion_screen")
+            ImageButton:
+                source: 'icons/tiendaw.png'
+                on_release:
+                    app.change_screen("store_screen")

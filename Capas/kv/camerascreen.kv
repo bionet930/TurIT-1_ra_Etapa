@@ -1,0 +1,49 @@
+<CameraScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': 1, 'right': .6}
+            size_hint: 1, .1
+            padding: 10
+            spacing: 10
+
+            ImageButton:
+                source: 'icons/atras.jpg'
+                on_release:
+                    app.change_screen('agregar_screen')
+
+        Label:
+            text:'CAMARA'
+            pos_hint:{'top': 1, 'left': .6}
+            size_hint: 1, .1
+            color:(0, 0, 0, 1.0)
+
+
+        GridLayout:
+            cols: 1
+            pos_hint:{'top': .9, 'left': .6}
+            size_hint: 1, .8
+            padding:5
+            spacing:5
+            orientation: 'vertical'
+            Camera:
+                id: camera
+                play:False
+            ToggleButton:
+                text: 'Play'
+                on_press: camera.play = not camera.play
+                size_hint_y: None
+                height: '48dp'
+            Button:
+                text: 'Capture'
+                size_hint_y: None
+                height: '48dp'
+                on_press: root.capture()
+

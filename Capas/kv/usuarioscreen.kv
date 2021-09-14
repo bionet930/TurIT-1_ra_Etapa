@@ -1,0 +1,91 @@
+<UsuarioScreen>:
+
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text:'USUARIO'
+            pos_hint:{'top': 1, 'left': 1}
+            size_hint: 1, .2
+            color:(0, 0, 0, 1.0)
+
+        GridLayout:
+            cols:1
+            rows:6
+            pos_hint:{'top': .9, 'left': 1}
+            size_hint: 1, .8
+            padding: 8
+            spacing: 8
+
+            ImageButton:
+                source: 'icons/cerrar.png'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 50, 200
+                on_release:
+                    app.change_screen('inicio_screen')
+            Button:
+                size_hint_y: None
+                pos_hint:{'x': .3, 'y': .6}
+                size: (150, 44)
+                color: (0, 0, 0, 1.0)
+                background_color: (0, 0, 0, 0)
+                text: 'Cerrar Sesion'
+                font_size: 12
+                on_release:
+                    app.change_screen('inicio_screen')
+
+            ImageButton:
+                source: 'icons/usuariob.png'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 50, 200
+                on_release:
+                    app.change_screen('datosusuario_screen')
+
+            Button:
+                size_hint_y: None
+                pos_hint:{'x': .3, 'y': .6}
+                size: (150, 44)
+                color: (0, 0, 0, 1.0)
+                background_color: (0, 0, 0, 0)
+                text: 'Cambiar datos de usuario'
+                font_size: 12
+                on_release:
+                    app.change_screen('datosusuario_screen')
+
+            ImageButton:
+                source: 'icons/historial_canjes.png'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 50, 200
+                on_release:
+                    print("Historial de canjes funcionando")
+
+            Button:
+                size_hint_y: None
+                pos_hint:{'x': .3, 'y': .6}
+                size: (150, 44)
+                color: (0, 0, 0, 1.0)
+                background_color: (0, 0, 0, 0)
+                text: 'Historial de Canjes'
+                font_size: 12
+                on_release:
+                    print("Historial de canjes funcionando")
+
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': .1, 'left': 1}
+            size_hint: 1, .1
+
+            Button:
+                text: 'Volver'
+                font_size: 12
+                color: (0, 0, 0, 1.0)
+                background_color: (0, 0, 0, 0)
+                size_hint: .5, .3
+                on_release:
+                    app.change_screen('home_screen')
+

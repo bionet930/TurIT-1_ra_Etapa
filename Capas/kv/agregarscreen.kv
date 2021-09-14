@@ -1,0 +1,97 @@
+<AgregarScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        GridLayout:
+            rows: 1
+            cols: 1
+            pos_hint:{'top': 1, 'right': 1}
+            size_hint: 1, .1
+            padding: 20
+            spacing: 20
+
+            Label:
+                text:'AGREGAR PUNTO DE INTERES'
+                pos_hint:{'top': 1, 'left': 1}
+                size_hint: 1, .1
+                color:(0, 0, 0, 1.0)
+
+        GridLayout:
+            rows: 7
+            cols: 1
+            size: self.size
+            pos: self.pos
+            padding: 10
+            spacing: 1
+
+            Label:
+                text:"Introduzca nombre del punto de interes"
+                size: self.size
+                pos: self.pos
+                color: (0, 0, 0, 1.0)
+
+            TextInput:
+                id: agregar_preguntas_input
+                hint_text: 'Introduzca su respuesta aqui'
+                size_hint: .6, .5
+                pos_hint: {'top': .8, 'right': .8}
+
+            Label:
+                text:"Que mejoraria de este lugar?"
+                size: self.size
+                pos: self.pos
+                color: (0, 0, 0, 1.0)
+
+            TextInput:
+                id: agregar_preguntas_input
+                hint_text: 'Introduzca su respuesta aqui'
+                size_hint: .6, .5
+                pos_hint: {'top': .8, 'right': .8}
+
+            Label:
+                text:"Le fue facil acceder?"
+                size: self.size
+                pos: self.pos
+                color: (0, 0, 0, 1.0)
+
+            TextInput:
+                id: agregar_preguntas_input
+                hint_text: 'Introduzca su respuesta aqui'
+                size_hint: .6, .5
+                pos_hint: {'top': .8, 'right': .8}
+
+            GridLayout:
+                rows: 1
+                cols: 2
+                size: self.size
+                pos: self.pos
+                padding: 20
+                spacing: 20
+
+                Button:
+                    size_hint_y: None
+                    height: '35dp'
+                    width: '5dp'
+                    text: 'Volver'
+                    font_size: 12
+                    color: (0, 0, 0, 1.0)
+                    background_color: (0, 0, 0, 0)
+                    pos_hint: {'top': .5, 'left': .1}
+                    on_release:
+                        app.change_screen('home_screen')
+
+                Button:
+                    size_hint_y: None
+                    height: '35dp'
+                    width: '5dp'
+                    text: 'Tomar foto'
+                    font_size: 12
+                    pos_hint: {'top': .5, 'right': .1}
+                    on_release:
+                        app.change_screen('camera_screen')
+

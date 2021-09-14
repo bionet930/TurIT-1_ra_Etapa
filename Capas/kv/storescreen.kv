@@ -1,0 +1,99 @@
+#:import utils kivy.utils
+
+
+<StoreScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text:'TIENDAS'
+            pos_hint:{'top': 1, 'left': 1}
+            size_hint: 1, .1
+            color:(0, 0, 0, 1.0)
+
+        GridLayout:
+            rows:6
+            cols: 1
+            pos_hint:{'top': .9, 'left': 1}
+            size_hint: 1, .8
+            padding:5
+            spacing:5
+
+            ImageButton:
+                source: 'img/guapa.jpg'
+                size_hint: self.texture_size
+                on_release:
+                    print("Boton Tienda funcionando")
+            Button:
+                id: Guapa
+                text: '[ref=https://www.guapa.com.uy/tiendas/salto-shopping_25]Guapa[/ref]'
+                size_hint_y: None
+                pos_hint:{'x': .3, 'y': .6}
+                size: (150, 44)
+                color: (0, 0, 0, 1.0)
+                background_color: (0, 0, 0, 0)
+                markup: True
+                on_ref_press:
+                    import webbrowser
+                    webbrowser.open_new_tab("guapa.com.uy/tiendas/salto-shopping_25")
+
+            ImageButton:
+                source: 'img/artesanosdayman.jpg'
+                size_hint: self.texture_size
+                onrelease:
+                    print('funciona')
+            Button:
+                id:Plaza de Artesanos
+                text: '[ref=http://www.artesanosunidos.com.uy/tiendas/detalle/74]Plaza de Artesanos [/ref]'
+                size_hint_y: None
+                pos_hint:{'center_x':-1, 'y': 0.20}
+                size: (150, 44)
+                color: (0, 0, 0, 1.0)
+                background_color: (0, 0, 0, 0)
+                markup: True
+                on_ref_press:
+                    import webbrowser
+                    webbrowser.open_new_tab("artesanosunidos.com.uy/tiendas/detalle/74")
+
+            ImageButton:
+                source: 'img/vamosalgrano.jpg'
+                size_hint: self.texture_size
+                on_release:
+                    print("Boton Tienda funcionando")
+            Button:
+                id: Guapa
+                text: 'Vamos al Grano[ref=https://www.guianaranja.com.uy/landingpage/51264/vamos-al-grano][/ref]'
+                size_hint_y: None
+                pos_hint:{'center_x':0.5, 'y': 0.20}
+                size: (150, 44)
+                color: (0, 0, 0, 1.0)
+                background_color: (0, 0, 0, 0)
+                markup: True
+                on_ref_press:
+                    import webbrowser
+                    webbrowser.open_new_tab("guianaranja.com.uy/landingpage/51264/vamos-al-grano")
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': .1, 'left': 1}
+            size_hint: 1, .1
+
+            ImageButton:
+                source: 'icons/homew.png'
+                on_release:
+                    app.change_screen('home_screen')
+            ImageButton:
+                source: 'icons/ticketsw.png'
+                on_release: app.change_screen ('descuentos')
+            ImageButton:
+                source: 'icons/ubicacionw.png'
+                on_release:
+                    app.change_screen("ubicacion_screen")
+            ImageButton:
+                source: 'icons/tiendab.png'
+                on_release:
+                    app.change_screen("store_screen")
+

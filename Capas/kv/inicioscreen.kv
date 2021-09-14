@@ -1,0 +1,102 @@
+#:import utils kivy.utils
+<InicioScreen>:
+    FloatLayout
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': 1, 'left': 1}
+            size_hint: 1, .1
+
+            ImageButton:
+                source: 'icons/west.ico'
+                pos_hint:{'x': .3, 'y': .6}
+                size_hint: 4000, 400
+        GridLayout:
+            rows: 1
+            pos_hint:{'top': 0.9, 'left': 1}
+            size_hint: 1, .1
+            padding:5
+            spacing:5
+            Label:
+                text:'TUR_IT'
+                font_size: 50
+                font: 'italic'
+                pos_hint:{'top': 1, 'left': 1}
+                size_hint: 1, .8
+                color:(0, 0, 0, 1.0)
+
+    GridLayout:
+
+        rows: 7
+        cols: 1
+        size_hint: 1, .5
+        pos_hint:{'top': 0.7, 'left': 1}
+        padding:1
+        spacing:1
+        Label:
+            text:"USUARIO"
+            size: self.size
+            pos: self.pos
+            color: (0, 0, 0, 1.0)
+
+        FloatLayout:
+            TextInput:
+                id: agregar_preguntas_input
+                hint_text: 'Introduzca Usuario'
+                size_hint: .8, .6
+                pos_hint: {'top': .8, 'right': .9}
+
+        Label:
+            text:" Contrasena"
+            size: self.size
+            pos: self.pos
+            color: (0, 0, 0, 1.0)
+
+        FloatLayout:
+            TextInput:
+                id: agregar_preguntas_input
+                hint_text: 'Introduzca Contrasena'
+                size_hint: .8, .6
+                pos_hint: {'top': .8, 'right': .9}
+
+        Label:
+            text:" Confirmar Contrasena"
+            size: self.size
+            pos: self.pos
+            color: (0, 0, 0, 1.0)
+
+        FloatLayout:
+            TextInput:
+                id: agregar_preguntas_input
+                hint_text: 'Confirmar Contrasena'
+                size_hint: .8, .6
+                pos_hint: {'top': .8, 'right': .9}
+    GridLayout:
+        rows:1
+        cols:2
+        pos_hint:{'top': 0.1, 'left': 1}
+        size_hint: 1, .1
+        padding:5
+        spacing:5
+        Button:
+            text: 'Iniciar'
+            font_size: 20
+            color: (0, 0, 0, 1.0)
+            background_color: (1.0, 0, 0,1.0)
+            size_hint: 0.5, .1
+            on_release:
+                app.change_screen('home_screen')
+        Button:
+            text: 'Registrarse'
+            font_size: 20
+            color: (0, 0, 0, 1.0)
+            background_color: (0, 1.0, 0,1.0)
+            size_hint: 0.5, .1
+            on_release:
+                print('registrarse')
